@@ -45,11 +45,22 @@ function checkColumns(matrix) {
 }
 
 function checkDiagonals(matrix) {
-
+  if (matrix[0][0] + matrix[1][1] + matrix[2][2] === 3) {
+    return true;
+  } else if (matrix[0][2] + matrix[1][1] + matrix[2][0] === 3) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function callWinner(player) {
-  console.log('name', player.name);
+function displayWinner(player) {
+  console.log(player.name);
+  $('.game--overlay').css('visibility', 'visible');
+   $('.game--overlay').text('Winner ' + player.name)
+  $('.game--grid').css('visibility', 'hidden');
+  $('.game--cross').css('visibility', 'hidden');
+  $('.game--circle').css('visibility', 'hidden');
 }
 
 var even = true;
@@ -72,7 +83,7 @@ $('.game--cell').one('click', function(e) {
   var threeInAColumn = checkColumns(player);
   var threeInADiagonal = checkDiagonals(player);
   if (threeInARow || threeInAColumn || threeInADiagonal) {
-    callWinner(player);
+    displayWinner(player);
   }
 
   even = !even;
