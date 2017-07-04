@@ -58,14 +58,14 @@ function displayWinner(player) {
   var i;
   player.name === 'X' ? i = 0 : i = 1;
   var $overlay = $('.game--overlay');
-  console.log('before', $overlay)
 
   $('.game--grid').css('display', 'none');
   $overlay.css('visibility', 'visible');
 
-  console.log('after', $overlay)
   $overlay.children()[i].style.visibility = 'visible';
-}
+  $overlay.children()[i].classList.add('active');
+
+};
 
 var even = true;
 
