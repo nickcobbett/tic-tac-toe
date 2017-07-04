@@ -32,13 +32,15 @@
 .game--overlay {
   position: absolute;
   box-shadow: 4px 5px 23px 0px rgba(0,0,0,0.75);
-  border: 1px dashed green;
+  /*border: 1px dashed green;*/
   width: 75%;
   height: 75%;
   visibility: hidden;
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
 }
 
 

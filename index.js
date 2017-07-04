@@ -42,7 +42,7 @@ function checkColumns(matrix) {
     }
   }
   return false;
-}
+};
 
 function checkDiagonals(matrix) {
   if (matrix[0][0] + matrix[1][1] + matrix[2][2] === 3) {
@@ -52,15 +52,19 @@ function checkDiagonals(matrix) {
   } else {
     return false;
   }
-}
+};
 
 function displayWinner(player) {
-  console.log(player.name);
-  $('.game--overlay').css('visibility', 'visible');
-   $('.game--overlay').text('Winner ' + player.name)
-  $('.game--grid').css('visibility', 'hidden');
-  $('.game--cross').css('visibility', 'hidden');
-  $('.game--circle').css('visibility', 'hidden');
+  var i;
+  player.name === 'X' ? i = 0 : i = 1;
+  var $overlay = $('.game--overlay');
+  console.log('before', $overlay)
+
+  $('.game--grid').css('display', 'none');
+  $overlay.css('visibility', 'visible');
+
+  console.log('after', $overlay)
+  $overlay.children()[i].style.visibility = 'visible';
 }
 
 var even = true;
@@ -95,10 +99,7 @@ $('.game--restart--parent').click(function() {
 
 function logPlays(row, col, player) {
   player[row][col] = 1;
-  // console.log('row ', row);
-  // console.log('col ', col);
-  // console.log('player ', player);
-}
+};
 
 $('.game--cell').each(function(i, el) {
   var i = $(this).index();
