@@ -11,3 +11,7 @@ $('.game--cell').one('click', function() {
 
   even = !even;
 });
+
+$('.game--restart--parent').click(function() {
+  location.reload();
+});
