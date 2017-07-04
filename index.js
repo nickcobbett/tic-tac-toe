@@ -64,6 +64,7 @@ function displayWinner(player) {
 
   $overlay.children()[i].style.visibility = 'visible';
   $overlay.children()[i].classList.add('active');
+  $('.game--field').addClass('game--over');
 
 };
 

@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.game--field.game--over {
+  background-color: #096d53;
+}
+
 .game--grid {
   position: absolute;
   width: 50%;
@@ -35,19 +39,17 @@
   text-align: center;
   font-weight: bold;
   font-size: 25px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: #24ad98;
   z-index: 10;
 }
 
 
 .game--row {
-  /*border: 1px dashed red;*/
   flex: 1;
   display: flex;
 }
 
 .game--cell {
-  /*border: 1px dashed black;*/
   flex: 1;
   padding: 15px;
   position: relative;
